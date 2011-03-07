@@ -11,13 +11,19 @@ Example
 
 @blog looks like this:
 
-[ 0 => {  title   => 'title'
-          content => 'content'
-          tags    => [tag1, tag2, tag3]
+[ 0 => {  'post_title'              => 'title'
+          'post_content'            => 'content'
+          'post_tags'               => [tag1, tag2, tag3]
+          'post_published_date'     => 'date'
        },
-  1 => {  title   => 'title'
-          content => 'content'
-          tags    => [tag1, tag2, tag3]
+  1 => {  'post_title'              => 'title'
+          'post_content'            => 'content'
+          'post_tags'               => [tag1, tag2, tag3]
+          'post_published_date'     => 'date'
+          'comment_author'          => 'author'
+          'comment_email'           => 'email'
+          'comment_content'         => 'content'
+          'comment_published_date'  => 'date'
        },
 ]
 
