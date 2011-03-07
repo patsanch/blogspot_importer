@@ -1,0 +1,24 @@
+BlogspotImporter
+================
+
+This tool will parse your Blogspot export xml file.
+
+
+Example
+=======
+
+@blog = BlogspotImporter::Blogspot.import("#{RAILS_ROOT}/public/blog-03-04-2011.xml")
+
+@blog looks like this:
+
+[ 0 => {  title   => 'title'
+          content => 'content'
+          tags    => [tag1, tag2, tag3]
+       },
+  1 => {  title   => 'title'
+          content => 'content'
+          tags    => [tag1, tag2, tag3]
+       },
+]
+
+Copyright (c) 2011 [Patrick Sanchez], released under the MIT license
