@@ -20,10 +20,12 @@ Example
           'post_content'            => 'content'
           'post_tags'               => [tag1, tag2, tag3]
           'post_published_date'     => 'date'
-          'comment_author'          => 'author'
-          'comment_email'           => 'email'
-          'comment_content'         => 'content'
-          'comment_published_date'  => 'date'
+          'post_comments'           => {
+            'comment_author'          => 'author'
+            'comment_email'           => 'email'
+            'comment_content'         => 'content'
+            'comment_published_date'  => 'date'
+          }
        },
 ]
 

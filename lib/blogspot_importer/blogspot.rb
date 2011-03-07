@@ -10,10 +10,12 @@ module BlogspotImporter
     #         post_content            => 'content'
     #         post_tags               => [tag1, tag2, tag3]
     #         post_published_date     => 'date'
-    #         comment_author_name     => 'author'
-    #         comment_author_email    => 'author email'
-    #         comment_content         => 'content'
-    #         comment_published_date  => 'date'
+    #         post_comments           => {
+    #           comment_author_name     => 'author'
+    #           comment_author_email    => 'author email'
+    #           comment_content         => 'content'
+    #           comment_published_date  => 'date'
+    #         }
     #       }
     # ]
     def self.import(file)
