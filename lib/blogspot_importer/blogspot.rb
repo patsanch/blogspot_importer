@@ -10,12 +10,20 @@ module BlogspotImporter
     #         post_content            => 'content'
     #         post_tags               => [tag1, tag2, tag3]
     #         post_published_date     => 'date'
-    #         post_comments           => {
-    #           comment_author_name     => 'author'
-    #           comment_author_email    => 'author email'
-    #           comment_content         => 'content'
-    #           comment_published_date  => 'date'
-    #         }
+    #         post_comments           => [
+    #           {
+    #             comment_author_name     => 'author'
+    #             comment_author_email    => 'author email'
+    #             comment_content         => 'content'
+    #             comment_published_date  => 'date'
+    #           },
+    #           {
+    #             'comment_author'          => 'author'
+    #             'comment_email'           => 'email'
+    #             'comment_content'         => 'content'
+    #             'comment_published_date'  => 'date'
+    #           }
+    #         ]
     #       }
     # ]
     def self.import(file)
@@ -70,8 +78,11 @@ module BlogspotImporter
                       'comment_content' => entry.css('content').inner_text,
                       'comment_published_date' => entry.css('published').inner_text
                     }
-                    
-          blog[lookup["#{entry.xpath('thr:in-reply-to').attr('ref').value}"]]["post_comments"] = comment
+          post_ctr = lookup["#{entry.xpath('thr:in-reply-to').attr('ref').value}"]       
+          if blog[post_ctr]["post_comments"].class != Array
+            blog[post_ctr]["post_comments"] = []
+          end
+          blog[post_ctr]["post_comments"] << comment
           comment = {}
         else
           puts "This entry is not needed so far"
