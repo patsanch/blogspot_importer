@@ -10,6 +10,7 @@ module BlogspotImporter
     #         post_content            => 'content'
     #         post_tags               => [tag1, tag2, tag3]
     #         post_published_date     => 'date'
+    #         post_is_draft           => 'yes' or 'no'
     #         post_comments           => [
     #           {
     #             comment_author_name     => 'author'
@@ -59,11 +60,13 @@ module BlogspotImporter
           post_content = entry.css("content").inner_text
           post_tags = tags
           post_published_date = entry.css("published").inner_text
+          post_is_draft = entry.to_s().match(/app:control/) ? 'yes' : 'no'
           post = { 
                     'post_title' => post_title, 
                     'post_content' => post_content, 
                     'post_tags' => post_tags, 
-                    'post_published_date' => post_published_date
+                    'post_published_date' => post_published_date,
+                    'post_is_draft' => post_is_draft
                   }
           blog[ctr] = post
           lookup["#{entry.css("id").inner_text}"] = ctr

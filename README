@@ -20,6 +20,7 @@ Example
           'post_content'            => 'content'
           'post_tags'               => [tag1, tag2, tag3]
           'post_published_date'     => 'date'
+          'post_is_draft'           => 'yes' or 'no'
           'post_comments'           => [
             {
               'comment_author'          => 'author'
