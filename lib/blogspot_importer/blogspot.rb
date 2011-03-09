@@ -19,10 +19,10 @@ module BlogspotImporter
     #             comment_published_date  => 'date'
     #           },
     #           {
-    #             'comment_author'          => 'author'
-    #             'comment_email'           => 'email'
-    #             'comment_content'         => 'content'
-    #             'comment_published_date'  => 'date'
+    #             comment_author_name     => 'author'
+    #             comment_author_email    => 'author email'
+    #             comment_content         => 'content'
+    #             comment_published_date  => 'date'
     #           }
     #         ]
     #       }

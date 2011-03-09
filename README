@@ -23,14 +23,14 @@ Example
           'post_is_draft'           => 'yes' or 'no'
           'post_comments'           => [
             {
-              'comment_author'          => 'author'
-              'comment_email'           => 'email'
+              'comment_author_name'     => 'author'
+              'comment_author_email'    => 'email'
               'comment_content'         => 'content'
               'comment_published_date'  => 'date'
             },
             {
-              'comment_author'          => 'author'
-              'comment_email'           => 'email'
+              'comment_author_name'     => 'author'
+              'comment_author_email'    => 'email'
               'comment_content'         => 'content'
               'comment_published_date'  => 'date'
             }
